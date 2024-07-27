@@ -1,9 +1,10 @@
 import expressAsyncHandler from 'express-async-handler';
 import Flutterwave from 'flutterwave-node-v3';
+import { Request, Response, NextFunction } from 'express';
 
 const flw = new Flutterwave(process.env.FLW_PUBLIC_KEY ?? '', process.env.FLW_SECRET_KEY ?? '');
 
-const examplePaymentFunction = expressAsyncHandler(async (req, res) => {
+const examplePaymentFunction = expressAsyncHandler(async (req: Request, res: Response, next: NextFunction) => {
   const payload = {
     tx_ref: "hooli-tx-1920bbtytty",
     amount: "100",
@@ -25,7 +26,10 @@ const examplePaymentFunction = expressAsyncHandler(async (req, res) => {
   try {
     const response = await flw.Transaction.initiate(payload);
     res.json(response);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
+  } catch (error: unknown) {
+    const err = error as Error;
+    res.status(500).json({ message: err.message });
   }
 });
+
+export { examplePaymentFunction };
