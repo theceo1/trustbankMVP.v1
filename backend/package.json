@@ -13,7 +13,8 @@
     "express-async-handler": "^1.1.4",
     "flutterwave-node-v3": "^1.0.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.11.15"
+    "mongoose": "^5.11.15",
+    "react-hot-toast": "^2.4.1"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",

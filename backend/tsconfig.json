@@ -1,3 +1,4 @@
+// trustbank/backend/tsconfig.json
 {
   "compilerOptions": {
     "target": "es2020",
@@ -7,7 +8,14 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
-    "typeRoots": ["./types", "./node_modules/@types"]
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "noEmit": true,
+    "incremental": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "types": ["./types"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.test.ts"]
