@@ -1,29 +1,20 @@
-import { FC, ReactNode } from "react";
-import { Toaster } from "react-hot-toast";
-import { Providers } from "@/components/Providers";
-import "@/styles/globals.css";
+// trustbank/frontend/src/app/layout.tsx
 
-type LayoutProps = {
-  children: ReactNode;
-};
+import React from 'react';
+import Component from '@/components/Component';
 
-const Layout: FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC = ({ children }) => {
   return (
-    <html lang="en">
-      <head>
-        <title>TrustBank Dashboard</title>
-        <meta name="description" content="TrustBank Dashboard" />
-        <link rel="icon" href="/favicon.ico" />
-      </head>
-      <body className="min-h-screen bg-gray-100">
-        <Providers>
-          <div className="flex flex-col min-h-screen">
-            <main className="flex-1">{children}</main>
-            <Toaster position="bottom-right" />
-          </div>
-        </Providers>
-      </body>
-    </html>
+    <div>
+      <header>
+        <h1>Dashboard Header</h1>
+      </header>
+      <Component />
+      <main>{children}</main>
+      <footer>
+        <p>Dashboard Footer</p>
+      </footer>
+    </div>
   );
 };
 

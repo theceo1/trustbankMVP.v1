@@ -1,13 +1,15 @@
-import React from 'react';
-import Wallet from '../components/Wallet'
+// trustbank/frontend/src/pages/index.tsx
 
-const HomePage: React.FC = () => {
+import React from 'react';
+import Link from 'next/link';
+
+const Home: React.FC = () => {
   return (
-    <div className="container mx-auto">
-      <h1 className="text-4xl font-bold">Welcome to Trustbank</h1>
-      <Wallet />
+    <div>
+      <h1>Home Page</h1>
+      <Link href="/dashboard">Go to Dashboard</Link>
     </div>
   );
 };
 
-export default HomePage;
+export default Home;

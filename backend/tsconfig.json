@@ -1,4 +1,4 @@
-// trustbank/backend/tsconfig.json
+// /Users/mac/projects/trustbank/backend/tsconfig.json
 {
   "compilerOptions": {
     "target": "es2020",

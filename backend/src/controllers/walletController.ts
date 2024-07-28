@@ -1,6 +1,18 @@
 import { Request, Response } from 'express';
 import Wallet from '../models/Wallet';
 
+declare global {
+    namespace Express {
+      interface Request {
+        user?: any;
+      }
+    }
+  }
+export const someControllerFunction = (req: Request, res: Response) => {
+  const user = (req as any).user; 
+};
+
+
 export const getWallet = async (req: Request, res: Response) => {
     try {
         const wallet = await Wallet.findOne({ userId: req.user._id });
