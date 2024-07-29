@@ -1,6 +1,8 @@
+// frontend/src/pages/dashboard.tsx
+
 import React from 'react';
 import Link from 'next/link';
-import { FaMoon, FaUser, FaSyncAlt, FaFilter, FaArrowUp, FaArrowDown, FaCoins } from 'react-icons/fa';
+import { FaMoon, FaSyncAlt, FaFilter, FaArrowUp, FaArrowDown, FaCoins } from 'react-icons/fa';
 import {
   Button,
   Card,
@@ -8,10 +10,10 @@ import {
   AvatarImage,
   AvatarFallback,
   DropdownMenu,
-  DropdownMenuTrigger, // Add this import
-  DropdownMenuContent, // Add this import
-  DropdownMenuItem, // Add this import
-  DropdownMenuSeparator, // Add this import
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
   Table,
   TableHeader,
   TableBody,
@@ -19,14 +21,13 @@ import {
   TableHead,
   TableCell
 } from '@/components/ui';
-import { UserIcon } from 'lucide-react';
 
 const Dashboard = () => {
   return (
     <div className="flex flex-col h-screen">
       <header className="bg-gray-900 text-white py-4 px-6 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <Link href="#" className="text-2xl font-bold" prefetch={false}>
+          <Link href="/" className="text-2xl font-bold" prefetch={false}>
             trustBank
           </Link>
           <nav className="hidden md:flex items-center gap-4">
@@ -182,63 +183,26 @@ const Dashboard = () => {
                     <TableRow>
                       <TableCell>1</TableCell>
                       <TableCell>Bitcoin</TableCell>
-                      <TableCell>$64,000</TableCell>
-                      <TableCell className="text-green-500">+2.5%</TableCell>
-                      <TableCell>$1.2T</TableCell>
+                      <TableCell>$40,000</TableCell>
+                      <TableCell className="text-green-500">+2%</</TableCell>
+                      <TableCell>$800B</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell>2</TableCell>
                       <TableCell>Ethereum</TableCell>
-                      <TableCell>$4,000</TableCell>
-                      <TableCell className="text-red-500">-1.5%</TableCell>
-                      <TableCell>$450B</TableCell>
+                      <TableCell>$2,500</TableCell>
+                      <TableCell className="text-red-500">-1%</TableCell>
+                      <TableCell>$300B</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell>3</TableCell>
-                      <TableCell>Cardano</TableCell>
-                      <TableCell>$2.15</TableCell>
-                      <TableCell className="text-green-500">+3.2%</TableCell>
-                      <TableCell>$72B</TableCell>
+                      <TableCell>USDC</TableCell>
+                      <TableCell>$1</TableCell>
+                      <TableCell className="text-gray-500">0%</</TableCell>
+                      <TableCell>$50B</TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>
-              </Card.Content>
-            </Card>
-            <Card className="dark:bg-gray-800 dark:text-gray-300">
-              <Card.Header>
-                <Card.Title className="text-sm">Latest News</Card.Title>
-              </Card.Header>
-              <Card.Content className="space-y-2">
-                <div className="flex items-start gap-2">
-                  <Avatar className="w-8 h-8 border">
-                    <AvatarImage src="/news-icon.jpg" />
-                    <AvatarFallback>NW</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="font-medium text-sm">Bitcoin hits new all-time high</div>
-                    <div className="text-gray-500 dark:text-gray-400 text-xs">2 hours ago</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Avatar className="w-8 h-8 border">
-                    <AvatarImage src="/news-icon.jpg" />
-                    <AvatarFallback>NW</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="font-medium text-sm">Ethereum 2.0 launch date announced</div>
-                    <div className="text-gray-500 dark:text-gray-400 text-xs">5 hours ago</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Avatar className="w-8 h-8 border">
-                    <AvatarImage src="/news-icon.jpg" />
-                    <AvatarFallback>NW</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="font-medium text-sm">Cardano to introduce smart contracts</div>
-                    <div className="text-gray-500 dark:text-gray-400 text-xs">1 day ago</div>
-                  </div>
-                </div>
               </Card.Content>
             </Card>
           </div>
