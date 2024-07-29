@@ -1,14 +1,12 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import walletRoutes from './routes/walletRoutes';
-
-// Load environment variables from .env file
-dotenv.config();
+import express, { Request, Response, NextFunction } from 'express';
 
 const app = express();
-const PORT = process.env.PORT || 5001;
 
-app.use('/api/wallet', walletRoutes);
+app.get('/', (req: Request, res: Response) => {
+  res.send('Hello World');
+});
+
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
