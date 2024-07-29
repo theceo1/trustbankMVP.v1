@@ -1,9 +1,9 @@
-// trustbank/backend/src/routes/walletRoutes.ts
 import express from 'express';
-import authMiddleware from '../middlewares/authMiddleware';
+import { getWalletBalance } from '../controllers/walletController';
+import { protect } from '../middlewares/authMiddleware';
 
 const router = express.Router();
 
-// Define your routes here and use authMiddleware
+router.get('/balance', protect, getWalletBalance);
 
 export default router;

@@ -1,8 +1,8 @@
-// trustbank/backend/src/middlewares/authMiddleware.ts
 import { Request, Response, NextFunction } from 'express';
+import jwt from 'jsonwebtoken';
+import User from '../models/User';
+import expressAsyncHandler from 'express-async-handler';
 
-const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
-  // Your middleware logic here
-};
-
-export default authMiddleware;
+export const protect = expressAsyncHandler(async (req: Request, res: Response, next: NextFunction) => {
+  // Implementation
+});
