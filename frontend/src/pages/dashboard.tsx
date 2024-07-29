@@ -1,5 +1,3 @@
-// frontend/src/pages/dashboard.tsx
-
 import React from 'react';
 import Link from 'next/link';
 import { FaMoon, FaSyncAlt, FaFilter, FaArrowUp, FaArrowDown, FaCoins } from 'react-icons/fa';
@@ -22,7 +20,7 @@ import {
   TableCell
 } from '@/components/ui';
 
-const Dashboard = () => {
+const Dashboard: React.FC = () => {
   return (
     <div className="flex flex-col h-screen">
       <header className="bg-gray-900 text-white py-4 px-6 flex items-center justify-between">
@@ -184,21 +182,21 @@ const Dashboard = () => {
                       <TableCell>1</TableCell>
                       <TableCell>Bitcoin</TableCell>
                       <TableCell>$40,000</TableCell>
-                      <TableCell className="text-green-500">+2%</</TableCell>
+                      <TableCell className="text-green-500">+2%</TableCell>
                       <TableCell>$800B</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell>2</TableCell>
                       <TableCell>Ethereum</TableCell>
                       <TableCell>$2,500</TableCell>
-                      <TableCell className="text-red-500">-1%</TableCell>
+                      <TableCell className="text-green-500">+1.5%</TableCell>
                       <TableCell>$300B</TableCell>
                     </TableRow>
                     <TableRow>
                       <TableCell>3</TableCell>
                       <TableCell>USDC</TableCell>
                       <TableCell>$1</TableCell>
-                      <TableCell className="text-gray-500">0%</</TableCell>
+                      <TableCell className="text-gray-500">0%</TableCell>
                       <TableCell>$50B</TableCell>
                     </TableRow>
                   </TableBody>
