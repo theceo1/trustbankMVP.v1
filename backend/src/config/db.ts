@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-export const connectDB = async () => {
+const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.MONGO_URI!, {
       useNewUrlParser: true,
@@ -8,11 +8,9 @@ export const connectDB = async () => {
     });
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
-    if (error instanceof Error) {
-      console.error(`Error: ${error.message}`);
-    } else {
-      console.error('Unknown error occurred while connecting to MongoDB');
-    }
+    console.error(`Error: ${(error as Error).message}`);
     process.exit(1);
   }
 };
+
+export { connectDB };
