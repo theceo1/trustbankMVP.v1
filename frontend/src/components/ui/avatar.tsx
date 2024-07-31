@@ -1,24 +1,22 @@
+// src/components/ui/avatar.tsx
 import React from 'react';
 
 interface AvatarProps {
+  src: string;
+  alt: string;
+  children?: React.ReactNode;
   className?: string;
-  children: React.ReactNode;
 }
 
-const Avatar: React.FC<AvatarProps> = ({ className, children }) => {
-  return <div className={`relative inline-block ${className}`}>{children}</div>;
-};
-
-export const AvatarImage: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> = (props) => {
-  return <img className="rounded-full" {...props} />;
-};
-
-export const AvatarFallback: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const Avatar: React.FC<AvatarProps> = ({ src, alt, children, className }) => {
   return (
-    <div className="rounded-full bg-gray-300 flex items-center justify-center">
-      {children}
+    <div className={`avatar ${className}`}>
+      {src ? <img src={src} alt={alt} /> : children}
     </div>
   );
 };
 
-export default Avatar;
+const AvatarFallback: React.FC = ({ children }) => <div>{children}</div>;
+const AvatarImage: React.FC<{ src: string; alt: string }> = ({ src, alt }) => <img src={src} alt={alt} />;
+
+export { Avatar, AvatarFallback, AvatarImage };
