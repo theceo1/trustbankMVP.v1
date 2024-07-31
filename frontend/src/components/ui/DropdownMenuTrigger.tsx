@@ -1,4 +1,5 @@
 import React from 'react';
+import { Menu } from '@headlessui/react';
 
 interface DropdownMenuTriggerProps {
   children: React.ReactNode;
@@ -6,7 +7,11 @@ interface DropdownMenuTriggerProps {
 }
 
 const DropdownMenuTrigger: React.FC<DropdownMenuTriggerProps> = ({ children, asChild }) => {
-  return <div>{children}</div>;
+  return (
+    <Menu.Button as={asChild ? React.Fragment : 'button'}>
+      {children}
+    </Menu.Button>
+  );
 };
 
 export default DropdownMenuTrigger;

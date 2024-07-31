@@ -9,6 +9,7 @@ import {
   Avatar,
   AvatarImage,
   AvatarFallback,
+  DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
