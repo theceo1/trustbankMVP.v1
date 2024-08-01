@@ -7,15 +7,14 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "^12.0.7",
+    "@headlessui/react": "^1.7.19",
+    "next": "latest",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-hook-form": "^7.20.0",
-    "tailwindcss": "^2.2.19"
+    "react-dom": "latest"
   },
   "devDependencies": {
-    "@types/node": "^16.11.6",
-    "@types/react": "^17.0.35",
-    "typescript": "^4.5.4"
+    "@swc/helpers": "^0.5.1",
+    "@types/react": "18.3.3",
+    "typescript": "^4.1.3"
   }
 }

@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Menu } from '@headlessui/react';
 
-const DropdownMenuItem: React.FC = ({ children }) => {
+interface DropdownMenuItemProps {
+  children: ReactNode;
+}
+
+export const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({ children }) => {
   return (
     <Menu.Item>
-      {({ active }: { active: boolean }) => (
-        <button className={`${active ? 'bg-gray-100' : ''} block w-full text-left px-4 py-2 text-sm text-gray-700`}>
+      {({ active }) => (
+        <div className={`${active ? 'bg-blue-500 text-white' : 'text-black'}`}>
           {children}
-        </button>
+        </div>
       )}
     </Menu.Item>
   );
 };
-
-export default DropdownMenuItem;

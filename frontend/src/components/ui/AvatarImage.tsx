@@ -1,13 +1,9 @@
 import React from 'react';
 
-interface AvatarImageProps {
-  src: string;
-  alt?: string;
-  className?: string;
-}
+export interface AvatarImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
 
-const AvatarImage: React.FC<AvatarImageProps> = ({ src, alt, className }) => {
-  return <img src={src} alt={alt || 'Avatar'} className={className} />;
-};
+const AvatarImage: React.FC<AvatarImageProps> = (props) => (
+  <img {...props} />
+);
 
 export default AvatarImage;

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DropdownMenuSeparator: React.FC = () => {
-  return <div className="border-t border-gray-200 my-1"></div>;
+  return <div className="your-dropdown-separator-class"></div>;
 };
 
 export default DropdownMenuSeparator;

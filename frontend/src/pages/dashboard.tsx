@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import { cn } from '../utils/cn';
 import { FaMoon, FaSyncAlt, FaFilter, FaArrowUp, FaArrowDown, FaCoins } from 'react-icons/fa';
 import {
@@ -21,6 +21,7 @@ import {
   TableHead,
   TableCell,
 } from '../components/ui';
+import ClientButton from '../components/ui/ClientButton';
 
 const Dashboard: React.FC = () => {
   return (
@@ -50,10 +51,12 @@ const Dashboard: React.FC = () => {
             </nav>
           </div>
           <div className="flex items-center gap-4">
-            <Button variant="primary" size="large">
+            <ClientButton variant="primary" size="lg">
               Sign In
-            </Button>
-            <Button>Sign Up</Button>
+            </ClientButton>
+            <ClientButton variant="outline" size="lg">
+              Sign Up
+            </ClientButton>
           </div>
         </header>
         <main className="flex-1 grid grid-cols-1 md:grid-cols-[300px_1fr] bg-gray-100">
@@ -61,9 +64,9 @@ const Dashboard: React.FC = () => {
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-4">
                 <h2 className="text-lg font-bold">Dashboard</h2>
-                <Button variant="ghost" size="icon" className="ml-auto">
+                <ClientButton variant="ghost" size="icon" className="ml-auto">
                   <FaMoon size={20} />
-                </Button>
+                </ClientButton>
               </div>
             </div>
             <div className="grid gap-4">
@@ -76,9 +79,9 @@ const Dashboard: React.FC = () => {
                     <div className="text-4xl font-bold text-sm">$12,345.67</div>
                     <div className="text-gray-500 text-xs">≈ 1.23 BTC</div>
                   </div>
-                  <Button variant="outline" size="sm">
+                  <ClientButton variant="outline" size="sm">
                     Deposit
-                  </Button>
+                  </ClientButton>
                 </Card.Content>
               </Card>
               <Card>
@@ -89,8 +92,8 @@ const Dashboard: React.FC = () => {
                   <div className="grid gap-2">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <Avatar className="w-8 h-8 border" src={''} alt={''}>
-                          <AvatarImage src="/placeholder-user.jpg" />
+                        <Avatar className="w-8 h-8 border">
+                          <AvatarImage src="/placeholder-user.jpg" alt="BTC" />
                           <AvatarFallback>BTC</AvatarFallback>
                         </Avatar>
                         <div>
@@ -102,8 +105,8 @@ const Dashboard: React.FC = () => {
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <Avatar className="w-8 h-8 border" src={''} alt={''}>
-                          <AvatarImage src="/placeholder-user.jpg" />
+                        <Avatar className="w-8 h-8 border">
+                          <AvatarImage src="/placeholder-user.jpg" alt="ETH" />
                           <AvatarFallback>ETH</AvatarFallback>
                         </Avatar>
                         <div>
@@ -115,8 +118,8 @@ const Dashboard: React.FC = () => {
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <Avatar className="w-8 h-8 border" src={''} alt={''}>
-                          <AvatarImage src="/placeholder-user.jpg" />
+                        <Avatar className="w-8 h-8 border">
+                          <AvatarImage src="/placeholder-user.jpg" alt="USDC" />
                           <AvatarFallback>USDC</AvatarFallback>
                         </Avatar>
                         <div>
@@ -135,59 +138,59 @@ const Dashboard: React.FC = () => {
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-lg font-bold">Market Overview</h2>
               <div className="flex items-center gap-4">
-                <Button variant="outline" size="sm">
+                <ClientButton variant="outline" size="sm">
                   <FaSyncAlt size={20} />
                   Refresh
-                </Button>
+                </ClientButton>
                 <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="outline" size="sm">
+                  <DropdownMenuTrigger>
+                    <ClientButton variant="outline" size="sm">
                       <FaFilter size={20} />
                       Filter
-                    </Button>
+                    </ClientButton>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
-                    <DropdownMenuItem>All</DropdownMenuItem>
-                    <DropdownMenuItem>Gainers</DropdownMenuItem>
-                    <DropdownMenuItem>Losers</DropdownMenuItem>
+                    <DropdownMenuItem>24h</DropdownMenuItem>
+                    <DropdownMenuItem>7d</DropdownMenuItem>
+                    <DropdownMenuItem>30d</DropdownMenuItem>
+                    <DropdownMenuItem>All time</DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem>Volume</DropdownMenuItem>
-                    <DropdownMenuItem>Market Cap</DropdownMenuItem>
+                    <DropdownMenuItem>Custom...</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>
             </div>
-            <Table className="min-w-full border-collapse block md:table">
-              <TableHeader className="block md:table-header-group">
-                <TableRow className="block md:table-row absolute -top-full md:relative md:top-auto -left-full md:left-auto md:table-row">
-                  <TableHead className="bg-gray-200 p-2 text-gray-600 font-bold text-left block md:table-cell">Name</TableHead>
-                  <TableHead className="bg-gray-200 p-2 text-gray-600 font-bold text-left block md:table-cell">Price</TableHead>
-                  <TableHead className="bg-gray-200 p-2 text-gray-600 font-bold text-left block md:table-cell">Change</TableHead>
-                  <TableHead className="bg-gray-200 p-2 text-gray-600 font-bold text-left block md:table-cell">Market Cap</TableHead>
-                  <TableHead className="bg-gray-200 p-2 text-gray-600 font-bold text-left block md:table-cell">Volume</TableHead>
+            <Table className="w-full text-sm">
+              <TableHeader className="bg-gray-200 dark:bg-gray-900">
+                <TableRow>
+                  <TableHead className="p-2 text-gray-600 dark:text-gray-300">Asset</TableHead>
+                  <TableHead className="p-2 text-gray-600 dark:text-gray-300">Price</TableHead>
+                  <TableHead className="p-2 text-gray-600 dark:text-gray-300">Change</TableHead>
+                  <TableHead className="p-2 text-gray-600 dark:text-gray-300">Market Cap</TableHead>
+                  <TableHead className="p-2 text-gray-600 dark:text-gray-300">Volume</TableHead>
                 </TableRow>
               </TableHeader>
-              <TableBody className="block md:table-row-group">
-                <TableRow className="bg-white border border-gray-200 p-2 block md:table-row">
-                  <TableCell className="p-2 text-gray-800 block md:table-cell">Bitcoin</TableCell>
-                  <TableCell className="p-2 text-gray-800 block md:table-cell">$41,000</TableCell>
-                  <TableCell className="p-2 text-green-500 block md:table-cell">+2.5%</TableCell>
-                  <TableCell className="p-2 text-gray-800 block md:table-cell">$770B</TableCell>
-                  <TableCell className="p-2 text-gray-800 block md:table-cell">$30B</TableCell>
+              <TableBody>
+                <TableRow className="bg-white dark:bg-gray-800 border border-gray-200 p-2 block md:table-row">
+                  <TableCell className="p-2 text-gray-800 dark:text-gray-200 block md:table-cell">Bitcoin</TableCell>
+                  <TableCell className="p-2 text-gray-800 dark:text-gray-200 block md:table-cell">$45,000</TableCell>
+                  <TableCell className="p-2 text-green-500 block md:table-cell">+5.2%</TableCell>
+                  <TableCell className="p-2 text-gray-800 dark:text-gray-200 block md:table-cell">$850B</TableCell>
+                  <TableCell className="p-2 text-gray-800 dark:text-gray-200 block md:table-cell">$25B</TableCell>
                 </TableRow>
-                <TableRow className="bg-gray-50 border border-gray-200 p-2 block md:table-row">
-                  <TableCell className="p-2 text-gray-800 block md:table-cell">Ethereum</TableCell>
-                  <TableCell className="p-2 text-gray-800 block md:table-cell">$2,500</TableCell>
-                  <TableCell className="p-2 text-red-500 block md:table-cell">-1.3%</TableCell>
-                  <TableCell className="p-2 text-gray-800 block md:table-cell">$300B</TableCell>
-                  <TableCell className="p-2 text-gray-800 block md:table-cell">$20B</TableCell>
+                <TableRow className="bg-white dark:bg-gray-800 border border-gray-200 p-2 block md:table-row">
+                  <TableCell className="p-2 text-gray-800 dark:text-gray-200 block md:table-cell">Ethereum</TableCell>
+                  <TableCell className="p-2 text-gray-800 dark:text-gray-200 block md:table-cell">$3,000</TableCell>
+                  <TableCell className="p-2 text-red-500 block md:table-cell">-2.8%</TableCell>
+                  <TableCell className="p-2 text-gray-800 dark:text-gray-200 block md:table-cell">$350B</TableCell>
+                  <TableCell className="p-2 text-gray-800 dark:text-gray-200 block md:table-cell">$20B</TableCell>
                 </TableRow>
-                <TableRow className="bg-white border border-gray-200 p-2 block md:table-row">
-                  <TableCell className="p-2 text-gray-800 block md:table-cell">Cardano</TableCell>
-                  <TableCell className="p-2 text-gray-800 block md:table-cell">$1.20</TableCell>
-                  <TableCell className="p-2 text-green-500 block md:table-cell">+4.0%</TableCell>
-                  <TableCell className="p-2 text-gray-800 block md:table-cell">$40B</TableCell>
-                  <TableCell className="p-2 text-gray-800 block md:table-cell">$1B</TableCell>
+                <TableRow className="bg-white dark:bg-gray-800 border border-gray-200 p-2 block md:table-row">
+                  <TableCell className="p-2 text-gray-800 dark:text-gray-200 block md:table-cell">Cardano</TableCell>
+                  <TableCell className="p-2 text-gray-800 dark:text-gray-200 block md:table-cell">$1.30</TableCell>
+                  <TableCell className="p-2 text-green-500 block md:table-cell">+8.1%</TableCell>
+                  <TableCell className="p-2 text-gray-800 dark:text-gray-200 block md:table-cell">$42B</TableCell>
+                  <TableCell className="p-2 text-gray-800 dark:text-gray-200 block md:table-cell">$2B</TableCell>
                 </TableRow>
               </TableBody>
             </Table>

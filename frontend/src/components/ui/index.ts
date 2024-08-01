@@ -1,13 +1,12 @@
-// trustbank/frontend/src/components/ui/index.ts
-export { Button } from './Button';
-export { Card } from './Card';
-export { Avatar } from './Avatar';
+export { default as Avatar } from './Avatar';
 export { default as AvatarImage } from './AvatarImage';
 export { default as AvatarFallback } from './AvatarFallback';
+export { Button } from './Button';
+export { Card } from './Card';
 export { DropdownMenu } from './DropdownMenu';
-export { default as DropdownMenuTrigger } from './DropdownMenuTrigger';
-export { default as DropdownMenuContent } from './DropdownMenuContent';
-export { default as DropdownMenuItem } from './DropdownMenuItem';
+export { DropdownMenuTrigger } from './DropdownMenuTrigger';
+export { DropdownMenuContent } from './DropdownMenuContent';
+export { DropdownMenuItem } from './DropdownMenuItem';
 export { default as DropdownMenuSeparator } from './DropdownMenuSeparator';
 export { default as Table } from './Table';
 export { default as TableHeader } from './TableHeader';
