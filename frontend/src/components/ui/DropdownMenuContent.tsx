@@ -1,13 +1,16 @@
-import React, { ReactNode } from 'react';
-import { Menu } from '@headlessui/react';
+// frontend/src/components/ui/DropdownMenuContent.tsx
+import React from 'react';
 
 interface DropdownMenuContentProps {
-  children: ReactNode;
-  align?: 'start' | 'end'; // If align prop is optional
+  children: React.ReactNode;
 }
 
-export const DropdownMenuContent: React.FC<DropdownMenuContentProps> = ({ children, align }) => {
-  const alignmentClass = align === 'end' ? 'right-0' : 'left-0';
-
-  return <Menu.Items className={`absolute mt-2 ${alignmentClass}`}>{children}</Menu.Items>;
+const DropdownMenuContent: React.FC<DropdownMenuContentProps> = ({ children }) => {
+  return (
+    <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+      {children}
+    </div>
+  );
 };
+
+export default DropdownMenuContent;

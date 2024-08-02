@@ -1,10 +1,17 @@
-import React, { ReactNode } from 'react';
-import { Menu } from '@headlessui/react';
+// frontend/src/components/ui/DropdownMenuTrigger.tsx
+import React from 'react';
 
 interface DropdownMenuTriggerProps {
-  children: ReactNode;
+  children: React.ReactNode;
+  onClick: () => void;
 }
 
-export const DropdownMenuTrigger: React.FC<DropdownMenuTriggerProps> = ({ children }) => {
-  return <Menu.Button>{children}</Menu.Button>;
+const DropdownMenuTrigger: React.FC<DropdownMenuTriggerProps> = ({ children, onClick }) => {
+  return (
+    <button onClick={onClick} className="focus:outline-none">
+      {children}
+    </button>
+  );
 };
+
+export default DropdownMenuTrigger;

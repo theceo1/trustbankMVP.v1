@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .navbar {
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .navbar a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+  }
+  
+  .container {
+    display: flex;
+    margin: 20px;
+  }
+  
+  .sidebar {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .main-content {
+    flex: 2;
+  }
+  
+  .account-balance, .recent-transactions, .market-overview, .trade-section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+  .account-balance h2, .recent-transactions h3, .market-overview h2, .trade-section h3 {
+    margin-top: 0;
+  }
+  
+  .account-balance p {
+    font-size: 2em;
+    margin: 0;
+  }
+  
+  .account-balance span {
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  .account-balance button {
+    background-color: teal;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .account-balance button:hover {
+    background-color: #00796b;
+  }
+  
+  .recent-transactions ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .recent-transactions li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .market-overview .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .market-overview .actions button {
+    background-color: teal;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .market-overview .actions button:hover {
+    background-color: #00796b;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+  }
+  
+  .positive {
+    color: green;
+  }
+  
+  .negative {
+    color: red;
+  }
+  
+  .trade-section .actions button {
+    background-color: teal;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .trade-section .actions button:hover {
+    background-color: #00796b;
+  }
+  
+  .trade-section .form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .trade-section .form select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  

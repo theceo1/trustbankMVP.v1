@@ -5,8 +5,8 @@ interface TableRowProps {
   className?: string;
 }
 
-const TableRow: React.FC<TableRowProps> = ({ children, className }) => {
-  return <tr className={className}>{children}</tr>;
-};
+const TableRow: React.FC<TableRowProps> = ({ children, className = '' }) => (
+  <tr className={`hover:bg-gray-100 ${className}`}>{children}</tr>
+);
 
 export default TableRow;

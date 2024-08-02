@@ -5,8 +5,8 @@ interface TableBodyProps {
   className?: string;
 }
 
-const TableBody: React.FC<TableBodyProps> = ({ children, className }) => {
-  return <tbody className={className}>{children}</tbody>;
-};
+const TableBody: React.FC<TableBodyProps> = ({ children, className = '' }) => (
+  <tbody className={`bg-white divide-y divide-gray-200 ${className}`}>{children}</tbody>
+);
 
 export default TableBody;

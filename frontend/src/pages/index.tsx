@@ -1,13 +1,13 @@
-// trustbank/frontend/src/pages/index.tsx
-
 import React from 'react';
-import Link from 'next/link';
+import Navbar from '../components/Navbar';
 
 const Home: React.FC = () => {
   return (
     <div>
-      <h1>Home Page</h1>
-      <Link href="/dashboard">Go to Dashboard</Link>
+      <Navbar />
+      <div style={{ padding: '20px', textAlign: 'center' }}>
+        <h1>Welcome to TrustBank</h1>
+      </div>
     </div>
   );
 };

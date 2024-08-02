@@ -1,18 +1,17 @@
-import React, { ReactNode } from 'react';
-import { Menu } from '@headlessui/react';
+// frontend/src/components/ui/DropdownMenuItem.tsx
+import React from 'react';
 
 interface DropdownMenuItemProps {
-  children: ReactNode;
+  children: React.ReactNode;
+  onClick: () => void;
 }
 
-export const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({ children }) => {
+const DropdownMenuItem: React.FC<DropdownMenuItemProps> = ({ children, onClick }) => {
   return (
-    <Menu.Item>
-      {({ active }) => (
-        <div className={`${active ? 'bg-blue-500 text-white' : 'text-black'}`}>
-          {children}
-        </div>
-      )}
-    </Menu.Item>
+    <button onClick={onClick} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+      {children}
+    </button>
   );
 };
+
+export default DropdownMenuItem;

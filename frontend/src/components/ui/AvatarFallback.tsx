@@ -1,11 +1,16 @@
+// frontend/src/components/ui/AvatarFallback.tsx
 import React from 'react';
 
-export interface AvatarFallbackProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface AvatarFallbackProps {
+  initials: string;
+}
 
-const AvatarFallback: React.FC<AvatarFallbackProps> = ({ children, className, ...props }) => (
-  <div className={`absolute inset-0 flex items-center justify-center bg-gray-300 text-white ${className}`} {...props}>
-    {children}
-  </div>
-);
+const AvatarFallback: React.FC<AvatarFallbackProps> = ({ initials }) => {
+  return (
+    <div className="rounded-full w-8 h-8 flex items-center justify-center bg-gray-200">
+      {initials}
+    </div>
+  );
+};
 
 export default AvatarFallback;

@@ -5,8 +5,8 @@ interface TableHeaderProps {
   className?: string;
 }
 
-const TableHeader: React.FC<TableHeaderProps> = ({ children, className }) => {
-  return <thead className={className}>{children}</thead>;
-};
+const TableHeader: React.FC<TableHeaderProps> = ({ children, className = '' }) => (
+  <thead className={`bg-gray-50 ${className}`}>{children}</thead>
+);
 
 export default TableHeader;

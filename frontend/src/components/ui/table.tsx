@@ -5,8 +5,8 @@ interface TableProps {
   className?: string;
 }
 
-const Table: React.FC<TableProps> = ({ children, className }) => {
-  return <table className={className}>{children}</table>;
-};
+const Table: React.FC<TableProps> = ({ children, className = '' }) => (
+  <table className={`min-w-full divide-y divide-gray-200 ${className}`}>{children}</table>
+);
 
 export default Table;
