@@ -1,21 +1,38 @@
-// trustbank/frontend/src/app/layout.tsx
+import React, { ReactNode } from 'react';
+import Link from 'next/link';
 
-import React from 'react';
-import Component from '@/components/Component';
+interface LayoutProps {
+    children: ReactNode;
+}
 
-const Layout: React.FC = ({ children }) => {
-  return (
-    <div>
-      <header>
-        <h1>Dashboard Header</h1>
-      </header>
-      <Component />
-      <main>{children}</main>
-      <footer>
-        <p>Dashboard Footer</p>
-      </footer>
-    </div>
-  );
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+    return (
+        <div>
+            <header>
+                <nav>
+                    <ul>
+                        <li><Link href="/">Home</Link></li>
+                        <li><Link href="/dashboard">Dashboard</Link></li>
+                        <li><Link href="/deposit">Deposit</Link></li>
+                        <li><Link href="/withdraw">Withdraw</Link></li>
+                        <li>
+                            <div>
+                                <button>Company</button>
+                                <div>
+                                    <Link href="/vision">Vision</Link>
+                                    <Link href="/mission">Mission</Link>
+                                    <Link href="/about">About</Link>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                {children}
+            </main>
+        </div>
+    );
 };
 
 export default Layout;

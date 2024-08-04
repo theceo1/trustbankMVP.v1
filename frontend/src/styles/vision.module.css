@@ -1,0 +1,18 @@
+/* File: src/styles/vision.module.css */
+.container {
+    padding: 40px;
+    background-color: #f0f4f8;
+    text-align: center;
+}
+
+.header {
+    font-size: 36px;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.text {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}

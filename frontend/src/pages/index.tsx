@@ -1,15 +1,19 @@
+// File: src/pages/index.tsx
 import React from 'react';
-import Navbar from '../components/Navbar';
+import Link from 'next/link';
 
-const Home: React.FC = () => {
-  return (
-    <div>
-      <Navbar />
-      <div style={{ padding: '20px', textAlign: 'center' }}>
-        <h1>Welcome to TrustBank</h1>
-      </div>
-    </div>
-  );
+const Home = () => {
+    return (
+        <div>
+            <h1>Welcome to TrustBank</h1>
+            <nav>
+                <ul>
+                    <li><Link href="/calculator">Calculator</Link></li>
+                    {/* Add other navigation links as needed */}
+                </ul>
+            </nav>
+        </div>
+    );
 };
 
 export default Home;

@@ -1,0 +1,104 @@
+/* File: src/styles/calculator.module.css */
+.calculatorContainer {
+    background-color: #f0f4f8;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header {
+    font-size: 36px;
+    color: #003366;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.leftSection {
+    background-color: #e6ecf3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+.select, .input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.result {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.resultTitle {
+    font-size: 30px;
+    color: #0066cc;
+}
+
+.resultText {
+    margin: 5px 0;
+    color: #666;
+}
+
+.cryptoLabel {
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 10px;
+    display: block;
+    text-align: left;
+}
+
+.cryptoOptions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.cryptoOption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.cryptoOption:hover {
+    transform: scale(1.05);
+}
+
+.cryptoOption img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.rightSection img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}

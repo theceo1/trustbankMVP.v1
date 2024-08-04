@@ -1,20 +1,22 @@
-/// <reference path="../types/flutterwave-node-v3.d.ts" />
+import { Request, Response } from 'express';
+import User from '../models/User';
+import { AuthenticatedRequest } from '../middlewares/authMiddleware';
 
-import { Request, Response, NextFunction } from 'express';
-import expressAsyncHandler from 'express-async-handler';
-import Flutterwave from 'flutterwave-node-v3';
+const makePayment = async (req: AuthenticatedRequest, res: Response) => {
+    const { amount } = req.body;
 
-const flw = new Flutterwave('PUBLIC_KEY', 'SECRET_KEY');
+    if (!req.user) {
+        return res.status(401).json({ message: 'Not authorized' });
+    }
 
-export const makePayment = expressAsyncHandler(async (req: Request, res: Response, next: NextFunction) => {
-  // Implementation
-  try {
-    const paymentDetails = {
-      // Payment details here
-    };
-    const response = await flw.makePayment(paymentDetails);
-    res.json(response);
-  } catch (error) {
-    next(error);
-  }
-});
+    if (req.user.balance < amount) {
+        return res.status(400).json({ message: 'Insufficient funds' });
+    }
+
+    req.user.balance -= amount;
+    await req.user.save();
+
+    res.status(200).json({ message: 'Payment successful', balance: req.user.balance });
+};
+
+export { makePayment };
